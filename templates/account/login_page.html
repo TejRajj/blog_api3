@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    {% load static %}
+        <link rel="stylesheet" href="{% static 'style.css' %}" type="text/css">
+
+</head>
+<body><br><br><br><br>
+<div class="container">
+
+
+
+<h1>Tejas Mankar</h1><br><br>
+<table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Full Name</th>
+        <th>Country</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for login_detail in db2 %}
+      <tr>
+        <td>{{ login_detail.id }}</td>
+        <td>{{ login_detail.Full_name}}</td>
+        <td>{{ login_detail.Country }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+
+  </table>
+<form method="post">{% csrf_token %}
+<button class="btn btn btn-outline-secondary" type="submit" href="{% url 'login_page' %}">Create</button>
+<button class="btn btn btn-outline-secondary" type="submit">Update</button>
+<button class="btn btn btn-outline-secondary" type="submit">Save</button>
+<button class="btn btn btn-outline-secondary" type="submit">Clear</button>
+</form>
+
+</div>
+</body>
+</html>

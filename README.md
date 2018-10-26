@@ -1,2 +1,2 @@
 # blog_api3
-This application is build using Django.
+This is Simple Blog application build using Python & Django.
